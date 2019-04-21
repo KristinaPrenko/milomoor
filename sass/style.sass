@@ -1,0 +1,713 @@
+
+
+=sm
+	@media screen and (min-width: 576px)
+		@content
+=md
+	@media screen and (min-width: 768px)
+		@content
+=lg
+	@media screen and (min-width: 992px)
+		@content
+=xl
+	@media screen and (min-width: 1200px)
+		@content
+=xxl
+	@media screen and (min-width: 1595px)
+		@content
+
+$colorBlue: #1620B6
+$colorViolet: #563A7A
+$colorAzure: #81D0C0
+
+
+
+
+html, body
+	margin: 0
+	padding: 0
+	width: 100%
+	height: 100%
+
+body
+	font-family: 'SNFS_display-Regular'
+	color: #010002
+
+ul
+	padding: 0
+	margin: 0
+li 
+	padding: 0
+	margin: 0
+	list-style-type: none
+
+a 
+	text-decoration: none
+	color: #010002
+	&:hover
+		color: #010002
+		text-decoration: none
+	
+
+
+.color-blue
+	background: #1620B6
+.color-violet
+	background: #563A7A
+.color-azure
+	background: #81D0C0
+
+
+
+
+
+
+
+.wrapper
+	position: relative
+	min-height: 100%
+	height: auto!important
+	overflow: hidden
+	&::after
+		content: ""
+		height: 54px
+		display: block
+		+md
+			display: none
+
+
+
+.header
+	align-items: center
+	justify-content: space-between
+	display: flex
+	height: 80px
+	padding: 0 20px
+	max-width: 1595px
+	margin: 0 auto
+	+xxl
+		padding: 0 226px 0 243px
+	&__logo
+		display: flex
+		align-items: center
+	&__logoImg
+		height: 40px
+		margin-right: 20px
+		+md
+			height: 23px
+	&__desc
+		display: none
+		font-size: 12px
+		line-height: 16px
+		text-transform: uppercase
+		+md
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+		&__text
+			margin: 0
+	&__contacts
+		+md
+			display: flex
+	&__contactIcon
+		width: 12px
+		margin-right: 15px
+		+md
+			margin-right: 25px
+	&__contactItem
+		font-size: 12px
+		line-height: 14px
+		+md
+			font-size: 14px
+
+		&-phone
+			+md
+				margin-right: 100px
+
+
+
+
+
+
+.banner
+	background: #000000
+	&__container
+		display: flex
+		margin: 0 auto
+		height: 350px
+		max-width: 500px
+		padding-left: 20px
+		+md
+			height: 450px
+			max-width: 800px
+		+lg
+			height: 600px
+			max-width: 1297px
+			padding-left: 40px
+		+xl
+			justify-content: space-between
+		
+		+xxl
+			max-width: 1595px
+
+			padding: 0 110px 0 208px
+	&__title
+		color: #FFFFFF
+		font-size: 16px
+		line-height: 21px
+		margin-top: 104px
+		+sm
+			width: 270px
+		+md
+			margin-right: 100px
+			font-size: 28px
+			margin-top: 150px
+			line-height: 40px
+		+lg
+			width: 517px
+			font-size: 40px
+			line-height: 52px
+		+xl
+			margin-right: 0
+		+xxl
+			margin-top: 210px
+		&-textBottom
+			font-size: 19px
+			text-transform: uppercase
+			+md
+				font-size: inherit
+				text-transform: none
+				line-height: inherit
+	&__button
+		border-radius: 40px
+		border: none
+		background: #FFFFFF
+		color: #000000
+		font-size: 12px
+		height: 40px
+		margin-top: 81px
+		width: 145px
+		+md
+			font-size: 18px
+			height: 60px
+			margin-top: 81px
+			width: 275px
+		+xxl
+			margin-top: 118px
+	&__aside
+		position: relative
+		+md
+			width: 300px
+		+xl
+			width: 615px
+		&-ellipse
+			background: #FFFFFF
+			border-radius: 50%
+			height: 242px
+			position: absolute
+			top: 133px
+			width: 242px
+			+md
+				height: 410px
+				width: 410px
+			+lg
+				height: 615px
+				width: 615px
+		&-ellipseSmall
+			background: #FFFFFF
+			border-radius: 50%
+			box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1)
+			height: 30px
+			position: absolute
+			left: 23px
+			top: 22px
+			width: 30px
+			+md
+				height: 50px
+				left: 35px
+				top: 35px
+				width: 50px
+			+lg 
+				height: 77px
+				left: 58px
+				top: 55px
+				width: 77px
+		&-img
+			bottom: 0
+			left: -35px
+			position: absolute
+			+sm
+				left: 0
+			+md
+				content: url("../img/banner_md.png")
+				height: 400px
+			+lg
+				height: 535px
+				bottom: -10px
+
+
+
+
+
+
+
+
+
+
+
+
+.main
+	background: #E5E5E5
+	position: relative
+	z-index: 100
+	&__container
+		max-width: 1595px
+		margin: 0 auto
+		+lg
+			padding-bottom: 50px
+		+xl
+			padding-bottom: 90px
+		+xxl
+			padding-bottom: 135px
+	&__title
+		font-size: 18px
+		line-height: 23px
+		text-align: center
+		padding: 30px 0
+		font-weight: bold
+		+lg
+			font-size: 24px
+			line-height: 28px
+		+xl
+			font-size: 30px
+			line-height: 39px
+			padding: 70px 0
+.catalog
+	display: flex
+	flex-wrap: wrap
+		
+	&__item
+		width: 50%
+		padding: 0
+		border: solid 1px #E5E5E5
+		+sm
+			width: 33.3333%
+		+lg
+			width: 25%
+			border: none
+			padding: 10px
+			&:nth-child(4n)
+				padding-right: 0
+			&:nth-child(4n-3)
+				padding-left: 0
+		+xl
+			padding: 0 16px 32px 16px
+	&__card
+		position: relative
+		height: 270px
+		background: #BFC9D2
+		display: flex
+		+xl
+			height: 380px
+		+xxl
+			height: 480px
+	&__img
+		height: 95%
+		justify-content: center
+		margin: auto auto 0
+		object-fit: cover
+	&__discount
+		font-size: 14px
+		font-weight: bold
+		line-height: 18px
+		color: #FFFFFF
+		position: absolute
+		top: 20px
+		left: 20px
+		+xl
+			font-size: 28px
+			line-height: 24px
+		+xl
+			top: 30px
+			left: 30px
+			font-size: 24px
+			line-height: 31px
+	&__body
+		background: #FFFFFF
+		padding: 16px 0 14px 20px
+		box-sizing: border-box
+		+xl
+			display: flex
+			align-items: flex-end
+			flex-wrap: wrap
+			padding: 15px 0 20px 25px
+	&__desc
+
+		&-name
+			font-size: 10px
+			line-height: 13px
+			+md
+				font-size: 12px
+				line-height: 15px
+
+			+xl
+				font-size: 14px
+				line-height: 18px
+		&-sale
+			font-size: 18px
+			line-height: 14px
+			color: #FF0000
+			font-weight: bold
+			padding: 11px 0 5px 0
+			+md
+				font-size: 21px
+				line-height: 22px
+			+xl
+				font-size: 24px
+				line-height: 31px
+				padding: 10px 0 0 0
+		&-price
+			font-size: 10px
+			line-height: 13px
+			font-weight: bold
+			text-decoration-line: line-through
+			padding-bottom: 15px
+			+md
+				font-size: 12px
+				line-height: 15px
+			+xl
+				padding-bottom: 0
+				font-size: 14px
+				line-height: 18px
+		&-color
+			display: flex
+			margin: 0 auto
+		&-colorItem
+			height: 15px
+			width: 15px
+			border-radius: 50%
+			margin-right: 15px
+			+md
+				height: 20px
+				width: 20px
+				margin-right: 15px
+			+xxl
+				height: 25px
+				width: 25px
+				margin: 0 10px
+
+
+
+
+
+
+.about
+	border-bottom: solid 1px #E5E5E5
+	&__container
+		position: relative
+		+xl
+			max-width: 1400px
+			margin: 0 auto
+		+xxl
+			max-width: 1595px
+			padding-left: 224px
+			padding-bottom: 20px
+	&__title
+		font-size: 24px
+		line-height: 31px
+		margin: 39px auto
+		text-align: center
+		font-weight: bold
+		+lg
+			font-size: 36px
+			line-height: 47px
+			margin: 70px 0
+		+xl
+			margin: 90px 0
+			padding-left: 10px
+			text-align: left
+	&__wrapper
+			+xl
+				display: flex
+				justify-content: flex-start
+	&__list
+		margin: 0 auto
+		+lg
+			width: 960px
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-start
+		+xl
+			margin: 0
+			position: relative
+			z-index: 500
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: flex-start
+		margin: 0 auto 40px auto
+		width: 350px
+		+sm
+			width: 480px
+		+xxl
+			margin-bottom: 70px
+		&-title
+			display: flex
+			align-items: center
+			margin: 0 auto
+			
+		&-icon
+			width: 50px
+			margin: 11px 0 8px 0
+			object-fit: none
+			height: 30px
+			+lg
+				width: 90px
+		&-text
+			width: 270px
+			font-size: 18px
+			font-family: 'SNFS_display-Regular'
+			line-height: 23px
+			margin-left: 11px
+			+sm
+				width: 350px
+			+lg
+				font-weight: bold
+				width: 390px
+				margin-left: 0
+		&-shape
+			width: 26px
+			object-fit: none
+			margin-left: auto
+			height: 30px
+			+lg
+				display: none
+				width: auto
+		&-desc
+			padding: 0 5px 0 66px
+			display: none
+			margin: 0 auto
+			font-size: 12px
+			text-align: justify
+			+sm
+				font-size: 14px
+				line-height: 18px
+			+lg
+				display: block
+				text-align: left
+				width: 356px
+				padding: 0
+				margin-left: 90px
+	&__banner-img
+		display: none
+		position: absolute
+		object-fit: cover
+		height: 100%
+		+xl
+			display: block
+			left: 100%
+			bottom: 0
+			transform: translateX(-90%)
+		+xxl
+			transform: translateX(-100%)
+
+
+
+	
+
+
+
+
+
+.form
+	max-width: 978px
+	padding-top: 60px
+	margin: 0 auto
+	+lg
+		padding-top: 84px
+	&__title
+		font-family: 'SNFS_display-Regular'
+		font-size: 14px
+		line-height: 18px
+		text-align: center
+		&-top
+			text-transform: uppercase
+			font-size: 24px
+			line-height: 31px
+			margin-bottom: 14px			
+			+lg
+				font-size: 36px
+				line-height: 36px
+				margin-bottom: 20px
+	&__contact
+		position: relative
+		display: flex
+		flex-direction: column
+		margin: 0 auto
+		padding: 60px 0 35px 0
+		+lg
+			padding: 90px 0 204px 0
+	&__input
+		display: flex
+		flex-direction: column
+		+lg
+			flex-direction: row
+			justify-content: space-between
+	&__btn
+		width: 303px
+		height: 65px
+		border-radius: 65px
+		border: 2px solid #F0F4FC
+		font-family: 'SNFS_display-Regular'
+		font-size: 14px
+		color: #010002
+		padding-left: 42px
+		margin: 0 auto 50px auto
+		+lg
+			margin: 0
+		&:last-child
+			margin: 0 auto
+			+lg
+				margin: 0
+		&-input
+			position: absolute
+			background: #171717
+			color: white
+			padding-left: 0
+			width: 303px
+			height: 65px
+			border-radius: 65px
+			border: 2px solid #171717
+			font-family: 'SNFS_display-Regular'
+			font-size: 18px
+			left: 50%
+			top: 100%
+			transform: translate(-50%, -50%)
+			+lg
+				position: absolute
+				margin: 0 auto
+				transform: translate(-50%, -154px)
+	&__check
+		display: flex
+		margin: 70px auto
+		width: 300px
+		+lg
+			margin: 50px auto
+		&-lable
+			font-family: 'SNFS_display-Regular'
+			color: #010002
+			font-size: 12px
+		&-input
+			width: 18px
+			height: 18px
+			margin-right: 13px
+
+
+
+
+
+
+
+
+
+
+.footer
+	background: #E5E5E5
+	&__container
+		max-width: 360px
+		padding: 80px 0 50px 0
+		margin: 0 auto
+		+lg
+			display: flex
+			max-width: 990px
+			align-items: flex-end
+		+xxl
+			max-width: 1635px
+			justify-content: space-between
+			padding: 84px 20px 66px 20px
+	&__route
+		+lg
+			margin-right: 100px
+		&-title
+			font-size: 18px
+			line-height: 23px
+			font-weight: bold
+			margin-bottom: 50px
+			text-align: center
+			+xxl
+				font-size: 24px
+				line-height: 31px
+		&-list
+			display: flex
+			flex-wrap: wrap
+			margin: 0 auto
+		&-item
+			font-size: 14px
+			line-height: 18px
+			padding-bottom: 42px
+			padding-left: 30px
+			width: 50%
+			+lg
+				width: 33.33%
+			+xxl
+				width: auto
+				margin-right: 75px
+				padding-left: 0
+	&__social
+		padding-bottom: 42px
+		width: 280px
+		margin: 0 auto
+		+lg
+			margin: 0 20px
+		+xxl
+			margin: 0
+		&-title
+			font-size: 18px
+			line-height: 23px
+			margin: 40px auto
+			text-align: center
+			+lg
+				margin-top: 0
+		&-item
+			display: flex
+			justify-content: space-between
+			margin: 0 auto
+		&-link
+			width: 40px
+			height: 40px
+	&__sign
+		font-size: 12px
+		line-height: 16px
+		text-align: center
+		+lg
+			display: none
+
+
+
+
+
+
+		
+
+
+	
+
+.bottom
+	width: 100%
+	height: 54px
+	margin-top: -54px
+	display: flex
+	justify-content: center
+	align-items: center
+	top: 100%
+	position: fixed
+	background: #FFFFFF
+	z-index: 999
+	box-shadow: 0 0 20px rgba(0,0,0,0.2)
+	+md
+		display: none
+	&__title
+		font-size: 18px
+		line-height: 23px	
+		color: rgba(0, 0, 0, 0.56)
